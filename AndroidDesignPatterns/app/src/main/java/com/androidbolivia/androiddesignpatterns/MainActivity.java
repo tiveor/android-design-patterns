@@ -68,6 +68,12 @@ public class MainActivity extends AppCompatActivity {
                     public void onClick(View view) {
                         Toast.makeText(MainActivity.this, "Click in button TEST", Toast.LENGTH_SHORT);
                     }
+                })
+                .setNegativeButton("CANCEL", new View.OnClickListener(){
+                    @Override
+                    public void onClick(View view) {
+                        Toast.makeText(MainActivity.this, "Click in button CANCEL", Toast.LENGTH_SHORT);
+                    }
                 }).build().show();
     }
 }

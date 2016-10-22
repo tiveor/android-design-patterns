@@ -12,7 +12,7 @@ import com.androidbolivia.androiddesignpatterns.R;
  * Created by Alvaro Orellana on 10/22/16.
  */
 
-public class CampDialog extends Dialog implements View.OnClickListener {
+public class CampDialog extends Dialog implements ICampDialog {
 
     private Button btnCancel;
     private Button btnOK;
@@ -25,20 +25,20 @@ public class CampDialog extends Dialog implements View.OnClickListener {
         btnCancel = (Button) findViewById(R.id.btn_cancel);
         btnOK = (Button) findViewById(R.id.btn_ok);
         txtMessage = (TextView) findViewById(R.id.txt_message);
-        btnCancel.setOnClickListener(this);
     }
 
     public void setMessage(String message) {
         txtMessage.setText(message);
     }
 
-    @Override
-    public void onClick(View view) {
-        dismiss();
-    }
-
     public void setPositiveButton(String name, View.OnClickListener listener) {
         btnOK.setText(name);
         btnOK.setOnClickListener(listener);
+    }
+
+    @Override
+    public void setNegativeButton(String name, View.OnClickListener listener) {
+        btnCancel.setText(name);
+        btnCancel.setOnClickListener(listener);
     }
 }

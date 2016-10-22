@@ -30,6 +30,11 @@ public class CampBuilder {
         return this;
     }
 
+    public CampBuilder setNegativeButton(String name, View.OnClickListener listener){
+        this.dialog.setNegativeButton(name, listener);
+        return this;
+    }
+
     public CampDialog build() {
         return this.dialog;
     }
