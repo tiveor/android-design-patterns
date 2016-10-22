@@ -68,6 +68,6 @@ public class MainActivity extends AppCompatActivity {
                     public void onClick(View view) {
                         Toast.makeText(MainActivity.this, "Click in button TEST", Toast.LENGTH_SHORT);
                     }
-                });
+                }).build().show();
     }
 }

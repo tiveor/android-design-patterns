@@ -1,7 +1,6 @@
 package com.androidbolivia.androiddesignpatterns.patterns.builder;
 
 import android.app.Activity;
-import android.content.DialogInterface;
 import android.view.View;
 
 /**
@@ -11,10 +10,8 @@ import android.view.View;
 public class CampBuilder {
 
     private CampDialog dialog;
-    private Activity activity;
 
     public CampBuilder(Activity activity) {
-        this.activity = activity;
         this.dialog = new CampDialog(activity);
     }
 
@@ -33,5 +30,7 @@ public class CampBuilder {
         return this;
     }
 
-
+    public CampDialog build() {
+        return this.dialog;
+    }
 }
